@@ -25,7 +25,7 @@ const ContactList = () => {
 
                 if(search !== "1234") {
                     newData = data.filter(function (i, n) {
-                        return i.fName === 'Charles';
+                        return i.fName === search;
                     });
                 }
 
@@ -54,11 +54,6 @@ const ContactList = () => {
                 contacts.sort((a, b) => a.fName > b.fName ? 1 : - 1 );
             }
         }
-
-
-
-
-
 
         return contacts.map((res, i) => {
             return <ContactTableRow obj={res} key={i} />;
