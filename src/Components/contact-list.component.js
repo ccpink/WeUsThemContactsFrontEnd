@@ -8,20 +8,28 @@ const ContactList = () => {
     const searchRef = useRef(null);
 
     const [updated, setUpdated] = useState('');
+    const [contacts, setContacts] = useState([]);
 
     const { search, fOrL, asc } = useParams();
 
     const QUERY = search.toString();
     const ASC = asc.toString();
 
-    const [contacts, setContacts] = useState([]);
-
-
     useEffect(() => {
         axios
             .get("http://localhost:3000/contact/")
             .then(({ data }) => {
-                setContacts(data);
+                console.log(data);
+
+                let newData = data;
+
+                if(search !== "1234") {
+                    newData = data.filter(function (i, n) {
+                        return i.fName === 'Charles';
+                    });
+                }
+
+                setContacts(newData);
             })
             .catch((error) => {
                 console.log(error);
@@ -48,14 +56,8 @@ const ContactList = () => {
         }
 
 
-        // let values;
-        // if(setSearching.inputText !== "1234"){
-        //     this.values.push( contacts.filter(function (i,n){
-        //         return i.fName ==='Charles';
-        //     }));
-        //     console.log(values);
-        //
-        // }
+
+
 
 
         return contacts.map((res, i) => {
