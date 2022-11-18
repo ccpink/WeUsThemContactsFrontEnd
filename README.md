@@ -2,11 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<<<<<<< HEAD
-Before running this application remember to do NPM Install to download all dependencies
-=======
 Before running this application remember to do NPM Install to download all dependencies 
->>>>>>> fc26615a429b1106b131e529283c3d9d77f53967
+
 
 UI Example
 ![alt text](https://cdn.discordapp.com/attachments/973591998168723506/1043244315201245235/One.PNG)
