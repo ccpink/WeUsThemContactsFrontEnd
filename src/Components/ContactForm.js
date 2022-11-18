@@ -123,7 +123,7 @@ const ContactForm = (props) => {
                                        setFieldValue("image", event.currentTarget.files[0]);
                                    }} />
                         </div>
-
+                        <br></br>
                         <button type="submit" className="btn btn-primary">submit</button>
                     </form>
                 )} />
